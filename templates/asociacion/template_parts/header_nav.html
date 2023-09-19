@@ -1,0 +1,95 @@
+{% load static %}
+
+<header class="site-header">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-8 col-12 d-flex flex-wrap">
+                <p class="d-flex me-4 mb-0">
+                    <i class="bi-geo-alt me-2"></i>
+                    Guadalajara, Jalisco
+                </p>
+
+                <p class="d-flex mb-0">
+                    <i class="bi-envelope me-2"></i>
+
+                    <a href="mailto:proproxjal@gmail.com?subject=Nuevo afiliado&body=Quiero más información por favor.">
+                        proproxjal@gmail.com
+                    </a>
+                </p>
+            </div>
+
+            <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
+                <ul class="social-icon">
+                    <!--<li class="social-icon-item">
+                        <a href="#" class="social-icon-link bi-twitter"></a>
+                    </li>-->
+
+                    <li class="social-icon-item">
+                        <a href="https://www.facebook.com/proproxjal" class="social-icon-link bi-facebook"></a>
+                    </li>
+
+                    <!--<li class="social-icon-item">
+                        <a href="#" class="social-icon-link bi-instagram"></a>
+                    </li>
+
+                    <li class="social-icon-item">
+                        <a href="#" class="social-icon-link bi-youtube"></a>
+                    </li>
+
+                    <li class="social-icon-item">
+                        <a href="#" class="social-icon-link bi-whatsapp"></a>
+                    </li>-->
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<nav class="navbar navbar-expand-lg bg-light shadow-lg">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'inicio' %}">
+            <img src="{% static 'images/logo.png' %}" class="logo img-fluid" alt="Kind Heart Charity">
+            <span>
+                Profesionales en Proximidad Social
+                <small>Jalisco A.C</small>
+            </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link click-scroll" href="{% url 'inicio' %}">Inicio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link click-scroll" href="#section_2">Conócenos</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link click-scroll" href="#section_3">Afiliate</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link click-scroll" href="#section_4">Causas</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+                </li>
+
+                <li class="nav-item ms-3">
+                    <a class="nav-link custom-btn custom-border-btn btn" href="#section_5">Contacto</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>

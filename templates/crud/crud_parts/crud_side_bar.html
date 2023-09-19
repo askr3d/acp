@@ -1,0 +1,24 @@
+<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+	  		<h1><a href="{% url 'mostrar_usuarios' %}" class="logo">PROPROXJAL</a></h1>
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+              <a href="{% url 'mostrar_usuarios' %}"><span class="fa fa-user mr-3"></span> Usuarios</a>
+          </li>
+          <li>
+            <a href="{% url 'mostrar_posts' %}"><span class="fa fa-sticky-note mr-3"></span> Posts</a>
+          </li>
+          <li>
+            <a href="{% url 'crear_post_view' %}"><span class="fa fa-sticky-note mr-3"></span> Nuevo</a>
+          </li>
+          <li>
+            <a href="{% url 'iniciar_sesion_view' %}"><span class="fa fa-paper-plane mr-3"></span> Cerrar Sesión</a>
+          </li>
+        </ul>
+
+    	</nav>

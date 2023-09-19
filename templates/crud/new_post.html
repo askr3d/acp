@@ -1,0 +1,53 @@
+{% load static %}
+
+<!doctype html>
+<html lang="es">
+  <head>
+  	<title>Crear Nuevo Post</title>
+     {% include  'asociacion/template_parts/head.html' %}
+
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    {% load static %}
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="css/style_vista_admin.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/admin_usuarios.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{% static 'admin_usuarios.js' %}"></script>
+
+        <link rel="stylesheet" href="{% static 'css/new_post.css' %}">
+    
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+
+        {% include 'crud/crud_parts/crud_side_bar.html' %}
+
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+            <h2 class="mb-4">Añadir nuevo post</h2>
+            <form class="cf">
+                <input type="text" id="input-name" placeholder="Título">
+                <textarea name="message" type="text" id="input-message" placeholder="Contenido" 
+                maxlength="2000"></textarea>
+                <input type="file" id="input-file" name="file">
+            <input type="submit" value="Enviar" id="input-submit">
+            </form>
+        </div>
+	</div>
+
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js"></script>' %}"></script>
+  </body>
+</html>
+
+

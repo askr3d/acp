@@ -1,0 +1,393 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+     {% include  'asociacion/template_parts/head.html' %}
+    <title>Inicio</title>
+</head>
+
+<body id="section_1">
+
+    {% include 'asociacion/template_parts/header_nav.html' %}
+
+    <main>
+
+        <section class="hero-section hero-section-full-height">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12 p-0">
+                        <div id="hero-slide" class="carousel carousel-fade slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="{% static 'images/slide/6.jpg' %}"
+                                        class="carousel-image img-fluid" alt="...">
+
+                                    <div class="carousel-caption d-flex flex-column justify-content-end">
+                                        <h1>Policías Unidos</h1>
+
+                                        <p>Unidos por la justicia</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="{% static 'images/slide/2.jpg' %}"
+                                        class="carousel-image img-fluid" alt="...">
+
+                                    <div class="carousel-caption d-flex flex-column justify-content-end">
+                                        <h1>Asistencia</h1>
+
+                                        <p>Ofrecemos asistencia a compañeros policías</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="{% static 'images/slide/3.jpg' %}"
+                                        class="carousel-image img-fluid" alt="...">
+
+                                    <div class="carousel-caption d-flex flex-column justify-content-end">
+                                        <h1>Solidaridad</h1>
+
+                                        <p>Tu tambien puedes apoyar al cambio</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#hero-slide"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+
+                            <button class="carousel-control-next" type="button" data-bs-target="#hero-slide"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section-padding section-bg" id="section_2">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                        <img src="{% static 'images/slide/1.jpg' %}"
+                            class="custom-text-box-image img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-6 col-12">
+                        <div class="custom-text-box">
+                            <h2 class="mb-2">Misión</h2>
+
+                            <!--<h5 class="mb-3">Kind Heart Charity, Non-Profit Organization</h5>-->
+
+                            <p class="mb-0">Asesorar y representar jurídicamente a nuestros afiliados 
+                                con la máxima atingencia, profesionalismo y empatía en cualquier rama del derecho. 
+                                Nuestro fin primordial es hacer que se respeten los derechos de los afiliados por lo que 
+                                no nos diversificamos a otro tipo de público. Nos circunscribimos al estado de Jalisco 
+                                puesto que conocemos profundamente a nuestros afiliados locales y optamos por darles un trato preferencial.</p>
+                        </div>
+
+                        <div class="custom-text-box">
+                            <h2 class="mb-2">Visión</h2>
+
+                            <!--<h5 class="mb-3">Kind Heart Charity, Non-Profit Organization</h5>-->
+
+                            <p class="mb-0">Ser líderes en la representación jurídica de los derechos laborales 
+                                de los servidores públicos dedicados a la seguridad en el estado de Jalisco 
+                                y un referente de profesionalismo y honestidad a nivel nacional.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <section class="volunteer-section section-padding" id="section_3">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12">
+                        <h2 class="text-white mb-4">Afiliate</h2>
+
+                        <form class="custom-form volunteer-form mb-5 mb-lg-0" action="{% url 'agregar_afiliado' %}" method="post" role="form">
+                            {% csrf_token %}
+                            <h3 class="mb-4">Unete a nuestra causa</h3>
+
+                            <div class="row">
+                                <div class="col-lg-6 col-12">
+                                    <input type="text" name="nombre" id="volunteer-name" class="form-control"
+                                        placeholder="Nombre completo" required>
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <input type="email" name="email" id="volunteer-email"
+                                        pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Correo electrónico"
+                                        required>
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <input type="text" name="folio" id="volunteer-subject"
+                                        class="form-control" placeholder="Folio Credencial de Elector" maxlength="18" required>
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <input type="text" name="corporacion" id="volunteer-email" class="form-control"
+                                    placeholder="Corporación"
+                                        required>
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <input type="text" name="telefono" id="volunteer-subject"
+                                        class="form-control" placeholder="Teléfono" maxlength="10" required>
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <input type="text" name="nombramiento" id="volunteer-email" class="form-control"
+                                    placeholder="Nombramiento"
+                                        required>
+                                </div>
+
+                            </div>
+
+                            <textarea name="comentarios" rows="3" class="form-control" id="volunteer-message"
+                                placeholder="Comentarios (Opcional)"></textarea>
+
+                                <p class="mb-4">DECLARO BAJO PROTESTA DE DECIR VERDAD QUE LOS DATOS PROPORCIONADOS 
+                                    EN LA PRESENTE CÉDULA DE AFILIACIÓN SON CIERTOS Y QUE ES POR MI VOLUNTAD AFILIARME 
+                                    A ESTA ASOCIACION Y MI COMPROMISO EN CUMPLIR CON LO ESTABLECIDO EN LOS ESTATUTOS 
+                                    DEL MISMO ASI COMO EL REGLAMENTO INTERNO.</p>
+
+                            <button type="submit" class="form-control">Enviar</button>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-6 col-12">
+                        <img src="{% static 'images/poli.jpg' %}"
+                            class="volunteer-image img-fluid" alt="">
+
+                        <div class="custom-block-body text-center">
+                            <h4 class="text-white mt-lg-3 mb-lg-3">Afiliate y ganamos todos</h4>
+
+                            <p class="text-white">Con tu ayuda podemos ayudar a cambiar la percepción de los policías
+                                y luchar por la dignificación de nuestro trabajo.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding" id="section_4">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12 text-center mb-4">
+                        <h2>Nuestras causas</h2>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                        <div class="custom-block-wrap">
+                            <img src="{% static 'images/causes/7.jpg' %}"
+                                class="custom-block-image img-fluid" alt="">
+
+                            <div class="custom-block">
+                                <div class="custom-block-body">
+                                    <h5 class="mb-3">Asesoria legal</h5>
+
+                                    <p>Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg kohm tokito</p>
+
+                                </div>
+
+                                <a href="{% url 'blog' %}" class="custom-btn btn">Conoce más</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                        <div class="custom-block-wrap">
+                            <img src="{% static 'images/causes/6.jpg' %}"
+                                class="custom-block-image img-fluid" alt="">
+
+                            <div class="custom-block">
+                                <div class="custom-block-body">
+                                    <h5 class="mb-3">Asistencia social</h5>
+
+                                    <p>Sed leo nisl, posuere at molestie ac, suscipit auctor mauris. Etiam quis metus
+                                        tempor</p>
+
+                                </div>
+
+                                <a href="{% url 'blog' %}" class="custom-btn btn">Conoce más</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="custom-block-wrap">
+                            <img src="{% static 'images/causes/8.jpg' %}"
+                                class="custom-block-image img-fluid" alt="">
+
+                            <div class="custom-block">
+                                <div class="custom-block-body">
+                                    <h5 class="mb-3">Prestamo de instrumental</h5>
+
+                                    <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+                                    </p>
+
+                                </div>
+
+                                <a href="{% url 'blog' %}" class="custom-btn btn">Conoce más</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonial-section section-padding section-bg">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <h2 class="mb-lg-3">Testimonios</h2>
+
+                        <div id="testimonial-carousel" class="carousel carousel-fade slide" data-bs-ride="carousel">
+
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="carousel-caption">
+                                        <h4 class="carousel-title">Estoy agradecida con profesionales en proximidad
+                                            ya que me apoyaron en un momento donde todos me dieron la espalda.
+                                        </h4>
+
+                                        <small class="carousel-name"><span class="carousel-name-title"></span>
+                                            Anónimo</small>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="carousel-caption">
+                                        <h4 class="carousel-title">Me sorprendio saber que todavia existen policías
+                                            buenos que se preocupan por su trabajo y ayudan a otros.
+                                        </h4>
+
+                                        <small class="carousel-name"><span class="carousel-name-title"></span>
+                                            Anónimo</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="contact-section section-padding" id="section_5">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-12 ms-auto mb-5 mb-lg-0">
+                        <div class="contact-info-wrap">
+                            <h2>Ponte en contacto</h2>
+
+                            <div class="contact-image-wrap d-flex flex-wrap"></div>
+
+                            <div class="contact-info">
+                                <h5 class="mb-3">Informacion de contacto</h5>
+
+                                <p class="d-flex mb-2">
+                                    <i class="bi-geo-alt me-2"></i>
+                                    Guadalajara, Jalisco
+                                </p>
+
+                                <p class="d-flex mb-2">
+                                    <i class="bi-telephone me-2"></i>
+
+                                    <a href="tel: 305-240-9671">
+                                        305-240-9671
+                                    </a>
+                                </p>
+
+                                <p class="d-flex">
+                                    <i class="bi-envelope me-2"></i>
+
+                                    <a href="mailto:proproxjal@gmail.com">
+                                        proproxjal@gmail.com
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-12 mx-auto">
+                        <form class="custom-form contact-form" action="#" method="post" role="form">
+                            <h2>Formulario de Contacto</h2>
+
+                            <p class="mb-4">O mandanos un email:
+                                <a href="mailto:proproxjal@gmail.com">proproxjal@gmail.com</a>
+                            </p>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <input type="text" name="first-name" id="first-name" class="form-control"
+                                        placeholder="Juan" required>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <input type="text" name="last-name" id="last-name" class="form-control"
+                                        placeholder="Perez" required>
+                                </div>
+                            </div>
+
+                            <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control"
+                                placeholder="JuanPerez@gmail.com" required>
+
+                            <textarea name="message" rows="5" class="form-control" id="message"
+                                placeholder="¿En qué te podemos ayudar?"></textarea>
+
+                            <a type="submit" class="form-control">Enviar mensaje</a>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="cta-section section-padding section-bg">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+
+                    <div class="col-lg-5 col-12 ms-auto">
+                        <h2 class="mb-0">Solidarizate.<br> Enterate.</h2>
+                    </div>
+
+                    <div class="col-lg-5 col-12">
+                        <a href="#" class="me-4">Informate acerca de los ultimos temas</a>
+
+                        <a href="{% url 'blog' %}" class="custom-btn btn smoothscroll">Vamos allá</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        
+    </main>
+
+    {% include 'asociacion/template_parts/footer.html' %}
+
+
+</body>
+
+</html>

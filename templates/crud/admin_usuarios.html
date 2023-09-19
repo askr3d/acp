@@ -1,0 +1,106 @@
+
+<!doctype html>
+<html lang="es">
+  <head>
+  	<title>Administración Usuarios</title>
+
+       {% include  'asociacion/template_parts/head.html' %}
+
+       <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="css/style_vista_admin.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+   {% load static %}
+    <link rel="stylesheet" href="{% static 'css/admin_usuarios.css' %}">
+    <script src="{% static 'js/admin_usuarios.js' %}"></script>
+    
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+
+
+        {% include 'crud/crud_parts/crud_side_bar.html' %}
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+        <h2 class="mb-4">Administrar usuarios</h2>
+        <div class="table-wrapper">
+          <div class="table-title">
+              <div class="row">
+                  <div class="col-sm-8"><h2>Info <b>Usuarios</b></h2></div>
+                  <div class="col-sm-4">
+                      <a type="button" class="btn btn-info add-new" href="#" data-target="#modalAgregarUsuario" data-toggle="modal"><i class="fa fa-plus"></i> Añadir</a>
+                  </div>
+              </div>
+          </div>
+          <table class="table table-bordered">
+              <thead>
+                  <tr>
+                      <th>ID</th>
+                       <th>Nombre</th>
+                      <th>Usuario</th>
+                      <th>Contraseña</th>
+                      <th>Acción</th>
+                  </tr>
+              </thead>
+
+              <tbody>
+                    {% for usuario in usuarios %}
+                  <tr>
+                      <td>{{ usuario.id }}</td>
+                      <td>{{ usuario.nombre }}</td>
+                      <td>{{ usuario.username }}</td>
+                      <td>{{ usuario.contrasenia }}</td>
+                        <td>
+                          <a href="#" class="edit" title="Edit" data-target="#modalEditarUsuario" data-toggle="modal" ><i class="material-icons">&#xE254;</i></a>
+                          <a class="delete" title="Delete" data-toggle="tooltip" href="{% url 'eliminar_usuario' usuario.id %}"><i class="material-icons">&#xE872;</i></a>
+                      </td>
+                  </tr>
+                    {% endfor %}
+              </tbody>
+
+          </table>
+        </div>
+      </div>
+		</div>
+
+
+
+<!-- Modal agregar usuario -->
+<form method="post" action="{% url 'agregarUsuario' %}">
+    {% csrf_token %}
+<div class="modal" tabindex="-1" role="dialog" id="modalAgregarUsuario">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Agregar Usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{ form }}
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </form>
+
+
+
+
+
+  </body>
+
+
+</html>
